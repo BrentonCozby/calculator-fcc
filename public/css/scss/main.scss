@@ -1,0 +1,139 @@
+@import "_normalize";
+
+.main-container {
+    min-height: 100vh;
+}
+
+.footer {
+    position: relative;
+    @media all and (min-height: 800px) {
+        position: absolute;
+    }
+    margin-top: 40px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.main.wrapper {
+    text-align: center;
+}
+
+.calc-buttonsUL,
+.calc-frame {
+    display: inline-block;
+}
+
+.calc-frame {
+    padding: 15px;
+    background-color: #bbb;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 0 3px 0 1px #888, 0 5px 0 1px #888, 0 15px 40px -10px #000;
+}
+
+.calc-screen {
+    display: block;
+    padding: 5px;
+    height: 38px;
+    max-width: 268px;
+    font-size: 2rem;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 1px 4px 0 #000;
+    text-align: right;
+    overflow: hidden;
+}
+
+.calc-buttonsUL {
+    &-row {
+        display: block;
+
+        &-button {
+            text-align: center;
+            font-size: 1.2rem;
+            display: inline-block;
+            padding: 16px;
+            margin: 5px;
+            width: 22px;
+            height: 19px;
+            border: 1px solid #888;
+            background-color: #eee;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px -1px #000;
+            position: relative;
+            top: 0;
+            vertical-align: middle;
+
+            &:active {
+                box-shadow: none;
+                top: 1px;
+                background-color: #ddd;
+            }
+
+            &.equals,
+            &.operator {
+                font-size: 1.5rem;
+                padding-top: 12px;
+                padding-bottom: 20px;
+            }
+
+            &.operator {
+                background-color: #ccc;
+
+                &:active {
+                    background-color: #bbb;
+                }
+            }
+
+            &.clear {
+                width: 93px;
+            }
+
+            &.equals {
+                background-color: orange;
+
+                &:active {
+                    background-color: darken(orange, 10%);
+                }
+            }
+        }
+    }
+}
+
+.keyboard-shortcuts {
+    max-width: 300px;
+    margin: 30px auto 0;
+    text-align: left;
+
+    &-title {
+        text-align: center;
+    }
+
+    &-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    &-row {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &-description,
+    &-key {
+        padding: 5px;
+    }
+
+    &-key {
+        text-align: right;
+        padding-right: 15px;
+    }
+}
+
+.key {
+    display: inline-block;
+    min-width: 100px;
+}
