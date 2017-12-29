@@ -1,201 +1,198 @@
 (function buttons() {
-    'use strict';
-
-    var screen = $('#calcScreen');
+    const screen = $('#calcScreen')
 
     const list = {
         zero: {
             element: $('#zero'),
-            onclick: function() {
-                return 0;
+            onclick() {
+                return 0
             },
-            keyCode: 48
+            keyCode: 48,
         },
         one: {
             element: $('#one'),
-            onclick: function() {
-                return 1;
+            onclick() {
+                return 1
             },
-            keyCode: 49
+            keyCode: 49,
         },
         two: {
             element: $('#two'),
-            onclick: function() {
-                return 2;
+            onclick() {
+                return 2
             },
-            keyCode: 50
+            keyCode: 50,
         },
         three: {
             element: $('#three'),
-            onclick: function() {
-                return 3;
+            onclick() {
+                return 3
             },
-            keyCode: 51
+            keyCode: 51,
         },
         four: {
             element: $('#four'),
-            onclick: function() {
-                return 4;
+            onclick() {
+                return 4
             },
-            keyCode: 52
+            keyCode: 52,
         },
         five: {
             element: $('#five'),
-            onclick: function() {
-                return 5;
+            onclick() {
+                return 5
             },
-            keyCode: 53
+            keyCode: 53,
         },
         six: {
             element: $('#six'),
-            onclick: function() {
-                return 6;
+            onclick() {
+                return 6
             },
-            keyCode: 54
+            keyCode: 54,
         },
         seven: {
             element: $('#seven'),
-            onclick: function() {
-                return 7;
+            onclick() {
+                return 7
             },
-            keyCode: 55
+            keyCode: 55,
         },
         eight: {
             element: $('#eight'),
-            onclick: function() {
-                return 8;
+            onclick() {
+                return 8
             },
-            keyCode: 56
+            keyCode: 56,
         },
         nine: {
             element: $('#nine'),
-            onclick: function() {
-                return 9;
+            onclick() {
+                return 9
             },
-            keyCode: 57
+            keyCode: 57,
         },
         plus: {
             element: $('#plus'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '+') return '';
-                if(input.length === 0) return '';
-                return '+';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '+') return ''
+                if (input.length === 0) return ''
+                return '+'
             },
-            keyCode: 43
+            keyCode: 43,
         },
         minus: {
             element: $('#minus'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '−') return '';
-                if(input.length === 0) return '';
-                return '−';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '−') return ''
+                if (input.length === 0) return ''
+                return '−'
             },
-            keyCode: 45
+            keyCode: 45,
         },
         multiply: {
             element: $('#multiply'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '×') return '';
-                if(input.length === 0) return '';
-                return '×';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '×') return ''
+                if (input.length === 0) return ''
+                return '×'
             },
-            keyCode: 42
+            keyCode: 42,
         },
         divide: {
             element: $('#divide'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '/') return '';
-                if(input.length === 0) return '';
-                return '/';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '/') return ''
+                if (input.length === 0) return ''
+                return '/'
             },
-            keyCode: 47
+            keyCode: 47,
         },
         neg: {
             element: $('#neg'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '-') return '';
-                return '-';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '-') return ''
+                return '-'
             },
-            keyCode: 110
+            keyCode: 110,
         },
         pow: {
             element: $('#pow'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '^') return '';
-                if(input.length === 0) return '';
-                return '^';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '^') return ''
+                if (input.length === 0) return ''
+                return '^'
             },
-            keyCode: 94
+            keyCode: 94,
         },
         decimal: {
             element: $('#decimal'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input[input.length - 1] === '.') return '';
-                return '.';
+            onclick() {
+                const input = screen.html().split('')
+                if (input[input.length - 1] === '.') return ''
+                return '.'
             },
-            keyCode: 46
+            keyCode: 46,
         },
         equals: {
             element: $('#equals'),
-            onclick: function() {
-                let input = screen.html().split('');
-                if(input.length === 0) return '';
+            onclick() {
+                const input = screen.html().split('')
+                if (input.length === 0) return ''
 
-                let values = [];
+                const values = []
 
-                input.push('');
-                input.reduce((prev, curr, index ) => {
-                    if(curr === '^') {
-                        values.push(prev, curr);
-                        return '';
+                input.push('')
+                input.reduce((prev, curr, index) => {
+                    if (curr === '^') {
+                        values.push(prev, curr)
+                        return ''
                     }
-                    if(curr === '×') {
-                        values.push(prev, curr);
-                        return '';
+                    if (curr === '×') {
+                        values.push(prev, curr)
+                        return ''
                     }
-                    if(curr === '/') {
-                        values.push(prev, curr);
-                        return '';
+                    if (curr === '/') {
+                        values.push(prev, curr)
+                        return ''
                     }
-                    if(curr === '+') {
-                        values.push(prev, curr);
-                        return '';
+                    if (curr === '+') {
+                        values.push(prev, curr)
+                        return ''
                     }
-                    if(curr === '−') {
-                        values.push(prev, curr);
-                        return '';
+                    if (curr === '−') {
+                        values.push(prev, curr)
+                        return ''
                     }
-                    if(index === input.length - 1) values.push(prev);
-                    return prev + curr;
-                });
+                    if (index === input.length - 1) values.push(prev)
+                    return prev + curr
+                })
 
                 // example values: ['40', 'x', '3', '/', '2', '−', '-10', '+', '10.5']
                 let result = values.reduce((prev, curr) => {
-                    if(prev[0] === '^') return Math.pow( parseFloat(prev.slice(1)), parseFloat(curr) );
-                    if(prev[0] === '×') return parseFloat(prev.slice(1)) * parseFloat(curr);
-                    if(prev[0] === '/') return parseFloat(prev.slice(1)) / parseFloat(curr);
-                    if(prev[0] === '+') return parseFloat(prev.slice(1)) + parseFloat(curr);
-                    if(prev[0] === '−') return parseFloat(prev.slice(1)) - parseFloat(curr);
-                    return curr + prev;
-                });
+                    if (prev[0] === '^') return parseFloat(prev.slice(1)) ** parseFloat(curr)
+                    if (prev[0] === '×') return parseFloat(prev.slice(1)) * parseFloat(curr)
+                    if (prev[0] === '/') return parseFloat(prev.slice(1)) / parseFloat(curr)
+                    if (prev[0] === '+') return parseFloat(prev.slice(1)) + parseFloat(curr)
+                    if (prev[0] === '−') return parseFloat(prev.slice(1)) - parseFloat(curr)
+                    return curr + prev
+                })
 
-                if(String(result).length > 14) {
-                    result = Number(result).toExponential(8);
+                if (String(result).length > 14) {
+                    result = Number(result).toExponential(8)
                 }
 
-                return result;
+                return result
             },
-            keyCode: 13
-        }
-    };
+            keyCode: 13,
+        },
+    }
 
-    module.exports = list;
-
-})();
+    module.exports = list
+}())
