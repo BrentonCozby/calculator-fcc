@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<%- include(`${partials}/head`, {pageTitle: 'Home'}); -%>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header role="banner">
+        <nav role="navigation"></nav>
+    </header>
+
+    <main role="main" class="main-container">
+        <div class="main wrapper clearfix">
+            <div class="calc-frame calc">
+                <div id="calcScreen" class="calc-screen"></div>
+                <div class="calc-buttonsUL">
+                    <div class="calc-buttonsUL-row">
+                        <span id="clear" class="calc-buttonsUL-row-button operator clear">Clear</span>
+                        <span id="pow" class="calc-buttonsUL-row-button operator">^</span>
+                        <span id="plus" class="calc-buttonsUL-row-button operator">+</span>
+                    </div>
+                    <div class="calc-buttonsUL-row">
+                        <span id="seven" class="calc-buttonsUL-row-button">7</span>
+                        <span id="eight" class="calc-buttonsUL-row-button">8</span>
+                        <span id="nine" class="calc-buttonsUL-row-button">9</span>
+                        <span id="divide" class="calc-buttonsUL-row-button operator">÷</span>
+                    </div>
+                    <div class="calc-buttonsUL-row">
+                        <span id="four" class="calc-buttonsUL-row-button">4</span>
+                        <span id="five" class="calc-buttonsUL-row-button">5</span>
+                        <span id="six" class="calc-buttonsUL-row-button">6</span>
+                        <span id="multiply" class="calc-buttonsUL-row-button operator">×</span>
+                    </div>
+                    <div class="calc-buttonsUL-row">
+                        <span id="one" class="calc-buttonsUL-row-button">1</span>
+                        <span id="two" class="calc-buttonsUL-row-button">2</span>
+                        <span id="three" class="calc-buttonsUL-row-button">3</span>
+                        <span id="minus" class="calc-buttonsUL-row-button operator">−</span>
+                    </div>
+                    <div class="calc-buttonsUL-row">
+                        <span id="decimal" class="calc-buttonsUL-row-button">.</span>
+                        <span id="zero" class="calc-buttonsUL-row-button">0</span>
+                        <span id="neg" class="calc-buttonsUL-row-button operator neg">±</span>
+                        <span id="equals" class="calc-buttonsUL-row-button equals">=</span>
+                    </div>
+                </div>
+            </div>
+            <section class="keyboard-shortcuts">
+                <h3 class="keyboard-shortcuts-title">Keyboard Shortcuts</h3>
+                <table class="keyboard-shortcuts-table">
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">n</td>
+                        <td class="keyboard-shortcuts-description">negative sign</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">c</td>
+                        <td class="keyboard-shortcuts-description">clear</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">*</td>
+                        <td class="keyboard-shortcuts-description">multiply</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">/</td>
+                        <td class="keyboard-shortcuts-description">divide</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">-</td>
+                        <td class="keyboard-shortcuts-description">minus</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">+</td>
+                        <td class="keyboard-shortcuts-description">plus</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">^</td>
+                        <td class="keyboard-shortcuts-description">power/exponent</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">backspace</td>
+                        <td class="keyboard-shortcuts-description">backspace</td>
+                    </tr>
+                    <tr class="keyboard-shortcuts-row">
+                        <td class="keyboard-shortcuts-key">enter</td>
+                        <td class="keyboard-shortcuts-description">calculate</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <%- include(`${partials}/footer`); -%>
+    <%- include(`${partials}/scripts`); -%>
+</body>
+</html>
